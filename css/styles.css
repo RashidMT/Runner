@@ -1,0 +1,182 @@
+html {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: #5FC8CE;
+	
+}	
+
+.runner {
+	position: absolute;
+	background-image: url('../img/runner.png');
+	background-repeat: no-repeat;
+	background-position: -15px;
+	height: 400px;
+	width: 230px;
+	margin-left: 300px;
+	margin-right: auto;
+	animation-name: cartoon;
+	animation-duration: 0.7s;
+	animation-timing-function: steps(1, start);
+	animation-iteration-count: infinite;
+	z-index: 1;
+}
+
+@keyframes cartoon {
+	0% {
+		background-position: -15px;
+	}
+	20% {
+		background-position: -295px;
+	}
+	40% {
+		background-position: -530px;
+	}
+	60% {
+		background-position: -765px;
+	}
+
+	80% {
+		background-position: -1030px;
+	}
+
+	100% {
+		background-position: -1300px;
+	}
+}
+
+.track {
+	width: 1200px;
+	height: 400px;
+	background-color: #525252;
+	position: relative;
+	top: 10px;
+	right: -150px;
+	box-shadow: 0 20px 0 0px grey;
+	transform-origin: bottom;
+	transform: perspective(600px) rotateX(50deg);
+}
+
+.track-lines {
+	width: 900px;
+	height: 10px;
+	background: linear-gradient(90deg, white 0%, white 70%, #525252 70%, #525252 100%);
+	background-size: 150px;
+	position: absolute;
+	top: 285px;
+	left: 300px;
+	transform-origin: bottom;
+	transform: perspective(600px) rotateX(50deg);
+	animation: track-lines 0.7s linear infinite;
+}
+
+@keyframes track-lines {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: -150px;
+	}
+}
+
+.palm {
+	position: absolute;
+	background-image: url('../img/palm-tree.png');
+	background-size: 350px;
+	background-repeat: no-repeat;
+	background-position: 800px;
+	height: 500px;
+	width: 1300px;
+	top: -200px;
+	right: 500px;
+	margin-left: 300px;
+	margin-right: auto;
+	animation-name: palm;
+	animation-duration: 7s;
+	animation-timing-function: linear;
+	animation-iteration-count: 100;
+}
+
+@keyframes palm {
+	from {
+		background-position: 800px;
+	}
+	to {
+		background-position: -400px;
+	}
+}
+
+.bird {
+	position: absolute;
+	background-image: url('../img/bird.png');
+	background-size: 350px;
+	background-repeat: no-repeat;
+	background-position: 1px 22px; 
+	height: 120px;
+	width: 120px;
+	margin-right: auto;
+	animation-name: bird;
+	animation-duration: 1s;
+	animation-timing-function: steps(1, start);
+	animation-iteration-count: infinite;
+}
+
+@keyframes bird {
+	0% {
+		background-position: 1px 22px;
+	}
+	12.5% {
+		background-position: -115px 22px;
+	}
+	25% {
+		background-position: -235px 22px;
+	}
+	37.5% {
+		background-position: 10px -85px;
+	}
+
+	50% {
+		background-position: -115px -85px;
+	}
+
+	62.5% {
+		background-position: -235px -85px;
+	}
+	
+	75%	{
+		background-position: 1px -200px; 
+	}
+
+	87.5% {
+		background-position: -115px -200px;
+	}
+
+	100% {
+		background-position:-235px -200px;
+	}
+}
+
+.bird-wrapper {
+	position: absolute;
+	top: 50px;
+	left: 300px;
+	animation: bird-move 10s cubic-bezier(.04,-0.29,1,-0.35) 10;
+}
+
+@keyframes bird-move {
+	from {
+		left: 300px;
+	}
+	to {
+		left: 1500px;
+	}
+}
